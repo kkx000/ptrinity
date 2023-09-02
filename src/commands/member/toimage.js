@@ -15,7 +15,7 @@ module.exports = {
     sendStickerFromFile,
   }) => {
     if (!isSticker) {
-      throw new InvalidParameterError("Você preciissa enviar um sticker!");
+      throw new InvalidParameterError("Você precisa enviar um sticker!");
     }
 
     const inputPath = await downloadSticker(baileysMessage, "input");

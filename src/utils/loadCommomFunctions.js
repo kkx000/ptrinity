@@ -3,7 +3,7 @@ const { extractDataFromMessage, baileysIs, download } = require(".");
 const { waitMessage } = require("./messages");
 
 exports.loadCommomFunctions = ({ bot, baileysMessage }) => {
-  const { remoteJid, prefix, commandName, args, userJid, isReply, replyJid } =
+  const { remoteJid, prefix, commandName, args } =
     extractDataFromMessage(baileysMessage);
 
   const isImage = baileysIs(baileysMessage, "image");
@@ -49,17 +49,17 @@ exports.loadCommomFunctions = ({ bot, baileysMessage }) => {
 
   const sendWaitReply = async (text) => {
     await sendWaitReact();
-    return await sendReply(`⏳ Aguarde! ${text || waitMessage}`);
+    return await sendReply(`⏳ ${text || waitMessage}`);
   };
 
   const sendWarningReply = async (text) => {
     await sendWarningReact();
-    return await sendReply(`⚠️ Atenção! ${text}`);
+    return await sendReply(`⚠️${text}`);
   };
 
   const sendErrorReply = async (text) => {
     await sendErrorReact();
-    return await sendReply(`❌ Erro! ${text}`);
+    return await sendReply(`❌${text}`);
   };
 
   const sendStickerFromFile = async (file) =>
@@ -75,15 +75,12 @@ exports.loadCommomFunctions = ({ bot, baileysMessage }) => {
   return {
     bot,
     remoteJid,
-    userJid,
     prefix,
     commandName,
     args,
-    isReply,
     isImage,
     isVideo,
     isSticker,
-    replyJid,
     baileysMessage,
     sendText,
     sendReply,

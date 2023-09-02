@@ -4,9 +4,9 @@ const { menuMessage } = require("../../utils/messages");
 module.exports = {
   name: "menu",
   description: "Menu de comandos",
-  commands: ["menu", "help"],
+  commands: ["menu", "help", "trinity"],
   usage: `${PREFIX}menu`,
   handle: async ({ sendReply }) => {
-    await sendReply("\n\n" + menuMessage());
+    await sendReply(menuMessage());
   },
 };

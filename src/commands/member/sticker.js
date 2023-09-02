@@ -7,7 +7,7 @@ const { exec } = require("child_process");
 module.exports = {
   name: "sticker",
   description: "Faço figurinhas de imagem/gif e vídeo",
-  commands: ["s", "sticker", "fig", "f"],
+  commands: ["stk"],
   usage: `${PREFIX}sticker (marque a imagem/gif/video) ou ${PREFIX}sticker (responda a imagem/gif/video)`,
   handle: async ({
     isImage,

@@ -1,12 +1,11 @@
 const { PREFIX } = require("../../config");
-const { gpt } = require("../../services/gpt")
-
+const { gpt_bad } = require("../../services/gpt_bad");
 
 module.exports = {
-  name: "gpt",
+  name: "gpt_bad",
   description: "Comandos de inteligência artificial!",
-  commands: ["ct", "pov", "CT", "Ct", "cT", "Pov", "POV"],
-  usage: `${PREFIX}ct com quantos paus se faz uma canoa?`,
+  commands: ["bad", "bd"],
+  usage: `${PREFIX}bad vai tomar no cu`,
   handle: async ({
     sendSuccessReply,
     sendWaitReply,
@@ -17,7 +16,7 @@ module.exports = {
 
     await sendSuccessReact();
 
-    const responseText = await gpt(args[0]);
+  const responseText = await gpt_bad(args[0]);
 
     await sendSuccessReply(responseText);
   },
